@@ -9,8 +9,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Recipe> _recipes;
+  late List<Recipe> _recipes;
   bool _isLoading = true;
+
+  void initState() {
+    super.initState();
+    fetchRecipes();
+  }
 
   Future<void> fetchRecipes() async {
     _recipes = await RecipeApi.fetchRecipes();
