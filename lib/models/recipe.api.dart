@@ -24,7 +24,13 @@ class RecipeApi {
       'x-rapidapi-host': 'yummly2.p.rapidapi.com',
       'useQueryString': 'true',
     });
-    // final response = await http.get(Uri.parse('https://www.themealdb.com/api/json/v1/1/search.php?s='));
-    // return Recipe.recipesFromSnapshot(jsonDecode(response.body));
+
+    Map data = jsonDecode(response.body);
+    List _temp = [];
+
+    for (var i in data['feed']) {
+      _temp.add(i['content']['details']);
+    }
+    return Recipe.recipesFromSnapshot(_temp);
   }
 }

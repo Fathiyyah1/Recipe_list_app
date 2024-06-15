@@ -1,3 +1,4 @@
+import 'package:api_series_app/models/recipe.dart';
 import 'package:api_series_app/presentation/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Recipe> _recipes;
+  bool _isLoading = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
