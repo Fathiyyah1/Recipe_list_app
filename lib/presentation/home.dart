@@ -1,3 +1,4 @@
+import 'package:api_series_app/models/recipe.api.dart';
 import 'package:api_series_app/models/recipe.dart';
 import 'package:api_series_app/presentation/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Recipe> _recipes;
   bool _isLoading = true;
+
+  Future<void> fetchRecipes() async {
+    _recipes = await RecipeApi.fetchRecipes();
+    setState(() {
+      _isLoading = false;
+    });
+    print(_recipes);
+  }
 
   @override
   Widget build(BuildContext context) {
