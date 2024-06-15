@@ -1,3 +1,4 @@
+import 'package:api_series_app/presentation/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'API Series',
-      debugShowCheckedModeBanner: false,
-      home: Container(
-        color: Colors.blue,
-      ),
-    );
+        title: 'API Series',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          primaryColor: Colors.white,
+          textTheme: TextTheme(
+            titleMedium: TextStyle(color: Colors.white),
+          ),
+        ),
+        home: HomePage());
   }
 }
