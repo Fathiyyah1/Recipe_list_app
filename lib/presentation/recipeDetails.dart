@@ -1,4 +1,3 @@
-import 'package:api_series_app/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:api_series_app/models/recipe.dart'; // Import your recipe model
 
@@ -18,11 +17,10 @@ class RecipeDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CardDetails(
-                title: recipe.name,
-                cookTime: recipe.totalTime.toString(),
-                rating: recipe.rating.toString(),
-                thumbnailUrl: recipe.images),
+            Container(
+              child: ,
+            ),
+            Image.network(recipe.images),
             SizedBox(height: 16),
             Text(
               recipe.name,
