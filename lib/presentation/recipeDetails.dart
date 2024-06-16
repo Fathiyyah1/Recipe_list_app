@@ -18,9 +18,33 @@ class RecipeDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              child: ,
+              margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+              width: MediaQuery.of(context).size.width,
+              height: 180,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.6),
+                    offset: Offset(
+                      0.0,
+                      10.0,
+                    ),
+                    blurRadius: 10.0,
+                    spreadRadius: -6.0,
+                  ),
+                ],
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.35),
+                    BlendMode.multiply,
+                  ),
+                  image: NetworkImage(recipe.images),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            Image.network(recipe.images),
             SizedBox(height: 16),
             Text(
               recipe.name,
