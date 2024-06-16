@@ -19,7 +19,8 @@ class RecipeDetailScreen extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-              width: MediaQuery.of(context).size.width,
+              width: double.infinity,
+              //  MediaQuery.of(context).size.width,
               height: 180,
               decoration: BoxDecoration(
                 color: Colors.black,
