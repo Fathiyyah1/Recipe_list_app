@@ -1,3 +1,4 @@
+import 'package:api_series_app/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:api_series_app/models/recipe.dart'; // Import your recipe model
 
@@ -10,42 +11,14 @@ class RecipeDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(recipe.name),
+        title: Text('Recipe: ${recipe.displayName}'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-              width: double.infinity,
-              //  MediaQuery.of(context).size.width,
-              height: 180,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.6),
-                    offset: Offset(
-                      0.0,
-                      10.0,
-                    ),
-                    blurRadius: 10.0,
-                    spreadRadius: -6.0,
-                  ),
-                ],
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.35),
-                    BlendMode.multiply,
-                  ),
-                  image: NetworkImage(recipe.images),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            CardDetails(image: recipe.images),
             SizedBox(height: 16),
             Text(
               recipe.name,
