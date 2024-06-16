@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 Widget CardDetails(
-    {required String name,
-    required String cookTime,
-    required String rating,
-    required String displayName,
+    {
+    // required String name,
+    // required String cookTime,
+    // required String rating,
+    // required String displayName,
     required String image}) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
