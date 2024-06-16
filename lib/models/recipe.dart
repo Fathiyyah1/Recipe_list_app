@@ -18,8 +18,10 @@ class Recipe {
   factory Recipe.fromJson(dynamic json) {
     return Recipe(
         name: json['name'] as String,
-        images: json['images'][0]['hostedLargeUrl'] as String,
-        rating: json['rating'] as double,
+        images: json['images'] != null
+            ? json['images'][0]['hostedLargeUrl'] as String
+            : '',
+        rating: json['rating'] != null ? json['rating'] as double : 0.0,
         totalTime: json['totalTime'] as String,
         displayName: json['displayName'] as String,
         directionsUrl: json['directionsUrl'] as String);
