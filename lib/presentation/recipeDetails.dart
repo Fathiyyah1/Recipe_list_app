@@ -18,7 +18,12 @@ class RecipeDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CardDetails(image: recipe.images),
+            CardDetails(
+                image: recipe.images,
+                name: recipe.name.toString(),
+                cookTime: recipe.totalTime.toString(),
+                rating: recipe.rating.toString(),
+                displayName: recipe.displayName),
             SizedBox(height: 16),
             Text(
               recipe.name,
