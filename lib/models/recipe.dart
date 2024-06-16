@@ -15,16 +15,17 @@ class Recipe {
     required this.directionsUrl,
   });
 
-  factory Recipe.fromJson(dynamic json) {
+  factory Recipe.fromJson(Map<String, dynamic> json) {
     return Recipe(
-        name: json['name'] as String,
-        images: json['images'] != null
-            ? json['images'][0]['hostedLargeUrl'] as String
-            : '',
-        rating: json['rating'] != null ? json['rating'] as double : 0.0,
-        totalTime: json['totalTime'] as String,
-        displayName: json['displayName'] as String,
-        directionsUrl: json['directionsUrl'] as String);
+      name: json['name'] ?? 'Unknown',
+      images: json['images'] != null && json['images'].isNotEmpty
+          ? json['images'][0]['hostedLargeUrl'] as String
+          : 'https://example.com/default_image.png',
+      rating: json['rating'] != null ? (json['rating'] as num).toDouble() : 0.0,
+      totalTime: json['totalTime'] ?? 'N/A',
+      displayName: json['displayName'] ?? 'Unknown',
+      directionsUrl: json['directionsUrl'] ?? '',
+    );
   }
 
   static List<Recipe> recipesFromSnapshot(List snapshot) {
