@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 Widget CardDetails(
-    {required String title,
-    required String cookTime,
-    required String rating,
-    required String thumbnailUrl}) {
+    {
+    //   required String name,
+    // required String cookTime,
+    // required String rating,
+    required String image}) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
     width: double.infinity,
@@ -28,17 +29,10 @@ Widget CardDetails(
           Colors.black.withOpacity(0.35),
           BlendMode.multiply,
         ),
-        image: NetworkImage(thumbnailUrl),
+        image: NetworkImage(image),
         fit: BoxFit.cover,
       ),
     ),
-    child: Column(
-      children: [
-        Image.network(thumbnailUrl),
-        Text(title),
-        Text(cookTime),
-        Text(rating),
-      ],
-    ),
+    child: Row(),
   );
 }
