@@ -33,13 +33,6 @@ Widget CardDetails(
         fit: BoxFit.cover,
       ),
     ),
-    child: Column(
-      children: [
-        Text(name),
-        Text(cookTime),
-        Text(rating),
-        Text(displayName),
-      ],
-    ),
+    child: Column(),
   );
 }
