@@ -2,6 +2,7 @@ import 'package:api_series_app/models/recipe.api.dart';
 import 'package:api_series_app/models/recipe.dart';
 import 'package:api_series_app/presentation/recipeDetails.dart';
 import 'package:api_series_app/presentation/widgets/recipe_card.dart';
+import 'package:api_series_app/presentation/widgets/search.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,6 +40,17 @@ class _HomePageState extends State<HomePage> {
             Text('Food Recipes'),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: RecipeSearchDelegate(),
+              );
+            },
+          ),
+        ],
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
