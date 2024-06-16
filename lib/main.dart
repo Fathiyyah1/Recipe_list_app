@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   // This widget is the root of your application.
+  // this app is a recipe lists and searching feature
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
